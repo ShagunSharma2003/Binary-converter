@@ -51,8 +51,16 @@ def get_result(check_val, option, num_entry):
     
     # Check if the user wants to convert to binary
     if check_val[0]:
-        # Convert the number to binary
-        binary = bin(eval(num))[2:]
+        # Check if option is hexa
+        if option == 3:
+            # Convert the number to binary
+            binary = bin(int(num, 16))[2:]
+        elif option == 1:
+            # Don't change the value
+            binary = num
+        else:
+            # Convert the number to binary
+            binary = bin(eval(num))[2:]
         # Append the result to the list
         results.append(binary)
         # Append the type of number to the list
@@ -60,8 +68,13 @@ def get_result(check_val, option, num_entry):
         
     # Check if the user wants to convert to octal
     if check_val[1]:
-        # Convert the number to octal
-        octal = oct(eval(num))[2:]
+        # Check if option is hexa
+        if option == 3:
+            # Convert the number to octal
+            octal = oct(int(num, 16))[2:]
+        else:
+            # Convert the number to octal
+            octal = oct(eval(num))[2:]
         # Append the result to the list
         results.append(octal)
         # Append the type of number to the list
@@ -69,8 +82,13 @@ def get_result(check_val, option, num_entry):
         
     # Check if the user wants to convert to hexadecimal
     if check_val[2]:
-        # Convert the number to hexadecimal
-        hexadecimal = hex(eval(num))[2:]
+        # Check if option is hexa
+        if option == 3:
+            # Convert the number to hexadecimal
+            hexadecimal = num
+        else:
+            # Convert the number to hexadecimal
+            hexadecimal = hex(eval(num))[2:]
         # Append the result to the list
         results.append(hexadecimal)
         # Append the type of number to the list
@@ -78,8 +96,16 @@ def get_result(check_val, option, num_entry):
         
     # Check if the user wants to convert to decimal
     if check_val[3]:
-        # Convert the number to decimal
-        decimal = int(num)
+        # Check if option is hexa
+        if option == 3:
+            # Convert the number to decimal
+            decimal = int(num, 16)
+        elif option == 1:
+            # Convert the number to decimal
+            decimal = int(num, 2)
+        else:
+            # Convert the number to decimal
+            decimal = int(num)
         # Append the result to the list
         results.append(decimal)
         # Append the type of number to the list
